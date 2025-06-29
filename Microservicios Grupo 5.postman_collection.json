@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "d8646dfe-62a0-45ce-b9a9-b7a7367d390a",
+		"name": "Microservicios Grupo 5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27587420"
+	},
+	"item": [
+		{
+			"name": "cart-manager",
+			"item": [
+				{
+					"name": "Listar items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/items",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"101",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creacion de cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 102\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/items/1",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incrementar cantidad",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/items/3/quantity-increment",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"items",
+								"3",
+								"quantity-increment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrementar cantidad",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/items/3/quantity-decrement",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"items",
+								"3",
+								"quantity-decrement"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar item",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quantity\": 1,\n  \"productId\": 123,\n  \"productName\": \"Alfajor Negro\",\n  \"price\": 2345\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/items",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"101",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/checkout",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"101",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un item",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/items/1",
+							"host": [
+								"{{base_url_cart}}"
+							],
+							"path": [
+								"cart-manager",
+								"api",
+								"cart",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:8081/auth/sign-in",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"clave\": \"admin123\",\n  \"roles\": [\n    \"ADMIN\"\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/sign-in",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_cart",
+			"value": "localhost:8083",
+			"type": "default"
+		},
+		{
+			"key": "jwt_token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTExNTg1NjAsImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MTI0NDk2MH0.sNEa0BwwU-YSxFukDKlC2JfOr2EKm3RXAU2q6l5PoTc",
+			"type": "string"
+		}
+	]
+}
