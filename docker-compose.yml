@@ -18,3 +18,19 @@ services:
       - rabbitmq
     environment:
       - SPRING_RABBITMQ_HOST=rabbitmq
+
+  usermanager:
+    image: registry.gitlab.com/mauro4622412/microservice-grupo5/user-manager:latest
+    container_name: usermanager
+    ports:
+      - "8081:8081"
+
+  productmanager:
+    image: registry.gitlab.com/mauro4622412/microservice-grupo5/product-manager:latest
+    container_name: productmanager
+    ports:
+      - "8082:8082"
+    depends_on:
+      - rabbitmq
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
