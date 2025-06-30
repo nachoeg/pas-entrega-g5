@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "688d5934-3dbe-4a23-8072-0547329c3268",
+		"_postman_id": "7189cf23-96c2-46a5-a347-75514d24a3a8",
 		"name": "Microservicios Grupo 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24660886"
+		"_exporter_id": "20444080"
 	},
 	"item": [
 		{
@@ -2046,6 +2046,187 @@
 			"description": "En los endpoint deberian colocar los token de autorizacion, hay endpoint especiales por roles de usuario.  \nLos valores de referencia deberian editarse en caso de que se inserte \"manualmente\" un DeliveryOrder , ya que todos deverian crearse desde la cola de rabbit con el checkout."
 		},
 		{
+			"name": "wallet-manager",
+			"item": [
+				{
+					"name": "Crear wallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_wallet}}/wallet-manager/api/create",
+							"host": [
+								"{{base_url_wallet}}"
+							],
+							"path": [
+								"wallet-manager",
+								"api",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar saldo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_wallet}}/wallet-manager/api/1/balance",
+							"host": [
+								"{{base_url_wallet}}"
+							],
+							"path": [
+								"wallet-manager",
+								"api",
+								"1",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar historial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_wallet}}/wallet-manager/api/1/history",
+							"host": [
+								"{{base_url_wallet}}"
+							],
+							"path": [
+								"wallet-manager",
+								"api",
+								"1",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ingresar dinero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 100.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_wallet}}/wallet-manager/api/1/deposit",
+							"host": [
+								"{{base_url_wallet}}"
+							],
+							"path": [
+								"wallet-manager",
+								"api",
+								"1",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retirar dinero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 100.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_wallet}}/wallet-manager/api/1/withdraw",
+							"host": [
+								"{{base_url_wallet}}"
+							],
+							"path": [
+								"wallet-manager",
+								"api",
+								"1",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "localhost:8081/auth/sign-in",
 			"request": {
 				"auth": {
@@ -2128,6 +2309,11 @@
 		{
 			"key": "base_url_deliveryOrder",
 			"value": "localhost:8084",
+			"type": "string"
+		},
+		{
+			"key": "base_url_wallet",
+			"value": "localhost:8085",
 			"type": "string"
 		}
 	]
