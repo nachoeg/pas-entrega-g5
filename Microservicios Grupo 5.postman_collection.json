@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0e674543-2541-447b-b0ea-bc40f7ff0981",
+		"_postman_id": "688d5934-3dbe-4a23-8072-0547329c3268",
 		"name": "Microservicios Grupo 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18473793"
+		"_exporter_id": "24660886"
 	},
 	"item": [
 		{
@@ -1762,6 +1762,290 @@
 			]
 		},
 		{
+			"name": "deliveryOrder-manager",
+			"item": [
+				{
+					"name": "orders status PENDING_ORDER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders?status=PENDING_ORDER",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING_ORDER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders status DELIVERED_ORDER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders?status=DELIVERED_ORDER",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "DELIVERED_ORDER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders status CANCELLED_ORDER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders?status=CANCELLED_ORDER",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "CANCELLED_ORDER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelar DeliveryOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/1/cancel",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "entregar DeliveryOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/1/deliver",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"1",
+								"deliver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tomar DeliveryOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/1/pick",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"1",
+								"pick"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list buyer DeliveryOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/buyer",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"buyer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list delivery DeliveryOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/delivery",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list buyer DeliveryOrders ADMIN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/buyer/1",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"buyer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list delivery DeliveryOrder ADMIN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/delivery/1",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"delivery",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create DeliveryOrder ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 11,\r\n  \"quantity\": 2,\r\n  \"buyerId\": 1,\r\n  \"deliveryId\": null,\r\n  \"status\": \"PENDING_ORDER\",\r\n  \"cardItemId\": 51,\r\n  \"priceTotal\": 2000,\r\n  \"productName\": \"Auriculares Bluetooth\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calificar DeliveryOrder BUYER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productStarts\": 5,\r\n  \"sellerStarts\": 4,\r\n  \"deliveryStarts\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_deliveryOrder}}/deliveryorder-manager/api/orders/1/qualify",
+							"host": [
+								"{{base_url_deliveryOrder}}"
+							],
+							"path": [
+								"deliveryorder-manager",
+								"api",
+								"orders",
+								"1",
+								"qualify"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "En los endpoint deberian colocar los token de autorizacion, hay endpoint especiales por roles de usuario.  \nLos valores de referencia deberian editarse en caso de que se inserte \"manualmente\" un DeliveryOrder , ya que todos deverian crearse desde la cola de rabbit con el checkout."
+		},
+		{
 			"name": "localhost:8081/auth/sign-in",
 			"request": {
 				"auth": {
@@ -1840,6 +2124,11 @@
 			"key": "jwt_token_admin2",
 			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
 			"type": "default"
+		},
+		{
+			"key": "base_url_deliveryOrder",
+			"value": "localhost:8084",
+			"type": "string"
 		}
 	]
 }
