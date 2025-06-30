@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d8646dfe-62a0-45ce-b9a9-b7a7367d390a",
+		"_postman_id": "0e674543-2541-447b-b0ea-bc40f7ff0981",
 		"name": "Microservicios Grupo 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27587420"
+		"_exporter_id": "18473793"
 	},
 	"item": [
 		{
@@ -286,6 +286,1482 @@
 			]
 		},
 		{
+			"name": "product-manager",
+			"item": [
+				{
+					"name": "get prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/5",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create prod sin user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\",\r\n  \"descripcion\": \"description4\",\r\n  \"categoria\": \"categoria4\",\r\n  \"cantidad\": 5,\r\n  \"precio\": 54.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\",\r\n  \"descripcion\": \"description4\",\r\n  \"categoria\": \"categoria4\",\r\n  \"cantidad\": 5,\r\n  \"precio\": 54.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/1/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get prod property",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/findBy3?prop_name=Herramientas",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"findBy3"
+							],
+							"query": [
+								{
+									"key": "prop_name",
+									"value": "Herramientas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete prod con user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/1/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "increment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/saga/2/1",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"saga",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/compra/2/1",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"compra",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/5",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all prod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create prod sin user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\",\r\n  \"descripcion\": \"description4\",\r\n  \"categoria\": \"categoria4\",\r\n  \"cantidad\": 5,\r\n  \"precio\": 54.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"nombre4\",\r\n  \"descripcion\": \"description4\",\r\n  \"categoria\": \"categoria4\",\r\n  \"cantidad\": 5,\r\n  \"precio\": 54.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/1/products",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get prod property",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/findBy3?prop_name=Herramientas",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"findBy3"
+							],
+							"query": [
+								{
+									"key": "prop_name",
+									"value": "Herramientas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete prod con user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/1/products/2",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"1",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "increment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/saga/2/1",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"saga",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_product}}/product-manager/api/products/compra/2/1",
+							"host": [
+								"{{base_url_product}}"
+							],
+							"path": [
+								"product-manager",
+								"api",
+								"products",
+								"compra",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-manager",
+			"item": [
+				{
+					"name": "personList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Homero2\",\r\n  \"apellido\": \"Simpsons2\",\r\n  \"dni\": 41852964,\r\n  \"palabraClave\": \"cerveza\",\r\n  \"fechaDeNacimiento\": \"20-06-2007\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/manage/health",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"manage",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"clave\": \"admin123\",\r\n  \"roles\": [\r\n    \"ADMIN\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/sign-in",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mod dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n  \"personaId\": 1,\r\n  \"ubicacion\": {\r\n    \"calle\": \"Calle Ficticia 1234\",\r\n    \"numero\": 2547,\r\n    \"localidad\": \"La Plata\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"pais\": \"Argentina\",\r\n    \"cp\": \"1900\"\r\n  },\r\n  \"tipoDeDomicilio\": \"FACTURACION\",\r\n  \"esPrincipal\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses/2",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users/4",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users/3",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"maurelandia@gmail.com\",\r\n    \"clave\": \"123456789\",\r\n    \"personaId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/sign-up",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"rolename\": \"OWNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/addRole",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"addRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/user/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "personList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Homero2\",\r\n  \"apellido\": \"Simpsons2\",\r\n  \"dni\": 41852964,\r\n  \"palabraClave\": \"cerveza\",\r\n  \"fechaDeNacimiento\": \"20-06-2007\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/manage/health",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"manage",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"clave\": \"admin123\",\r\n  \"roles\": [\r\n    \"ADMIN\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/sign-in",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mod dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n  \"personaId\": 1,\r\n  \"ubicacion\": {\r\n    \"calle\": \"Calle Ficticia 1234\",\r\n    \"numero\": 2547,\r\n    \"localidad\": \"La Plata\",\r\n    \"provincia\": \"Buenos Aires\",\r\n    \"pais\": \"Argentina\",\r\n    \"cp\": \"1900\"\r\n  },\r\n  \"tipoDeDomicilio\": \"FACTURACION\",\r\n  \"esPrincipal\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/addresses/2",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"addresses",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users/4",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token_admin2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/api/users/3",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"maurelandia@gmail.com\",\r\n    \"clave\": \"123456789\",\r\n    \"personaId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/sign-up",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"rolename\": \"OWNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_user}}/auth/addRole",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"auth",
+								"addRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_user}}/user-manager/api/persons/user/1",
+							"host": [
+								"{{base_url_user}}"
+							],
+							"path": [
+								"user-manager",
+								"api",
+								"persons",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "localhost:8081/auth/sign-in",
 			"request": {
 				"auth": {
@@ -349,6 +1825,21 @@
 			"key": "jwt_token",
 			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTExNTg1NjAsImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MTI0NDk2MH0.sNEa0BwwU-YSxFukDKlC2JfOr2EKm3RXAU2q6l5PoTc",
 			"type": "string"
+		},
+		{
+			"key": "base_url_user",
+			"value": "localhost:8081",
+			"type": "default"
+		},
+		{
+			"key": "base_url_product",
+			"value": "localhost:8082",
+			"type": "default"
+		},
+		{
+			"key": "jwt_token_admin2",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
+			"type": "default"
 		}
 	]
 }
