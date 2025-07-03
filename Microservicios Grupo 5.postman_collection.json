@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "7189cf23-96c2-46a5-a347-75514d24a3a8",
+		"_postman_id": "bb3e178d-436a-4d9b-81ea-7ae9d9fc8fb0",
 		"name": "Microservicios Grupo 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20444080"
+		"_exporter_id": "27587420"
 	},
 	"item": [
 		{
@@ -21,7 +21,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/items",
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/1/items",
 							"host": [
 								"{{base_url_cart}}"
 							],
@@ -29,7 +29,7 @@
 								"cart-manager",
 								"api",
 								"cart",
-								"101",
+								"1",
 								"items"
 							]
 						}
@@ -182,7 +182,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"quantity\": 1,\n  \"productId\": 123,\n  \"productName\": \"Alfajor Negro\",\n  \"price\": 2345\n}",
+							"raw": "{\n  \"quantity\": 1,\n  \"productId\": 5,\n  \"productName\": \"Pinza\",\n  \"price\": 4500.0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -190,7 +190,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/items",
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/1/items",
 							"host": [
 								"{{base_url_cart}}"
 							],
@@ -198,7 +198,7 @@
 								"cart-manager",
 								"api",
 								"cart",
-								"101",
+								"1",
 								"items"
 							]
 						}
@@ -229,7 +229,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url_cart}}/cart-manager/api/cart/101/checkout",
+							"raw": "{{base_url_cart}}/cart-manager/api/cart/1/checkout",
 							"host": [
 								"{{base_url_cart}}"
 							],
@@ -237,7 +237,7 @@
 								"cart-manager",
 								"api",
 								"cart",
-								"101",
+								"1",
 								"checkout"
 							]
 						}
@@ -2288,7 +2288,7 @@
 		},
 		{
 			"key": "jwt_token",
-			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTExNTg1NjAsImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MTI0NDk2MH0.sNEa0BwwU-YSxFukDKlC2JfOr2EKm3RXAU2q6l5PoTc",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NTEyNDQ1MTksImF1dGhvcml0aWVzIjpbIkFETUlOIl0sImV4cCI6MTc1MjEzMzU1Mn0.Y-3iPDW0KS6x-xVNbmZYjKXw9L1mtSJcXKkDrYDm6Y8",
 			"type": "string"
 		},
 		{
@@ -2314,6 +2314,11 @@
 		{
 			"key": "base_url_wallet",
 			"value": "localhost:8085",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token_buyer_user1",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTc1MTU2NTU2OCwidXNlcklkIjoxLCJhdXRob3JpdGllcyI6WyJCVVlFUiJdLCJleHAiOjE3NTE2NTE5Njh9.b54fk8RvdGq1Na9mL-Z044rgzM_JzRyxCkgGgsMXkw0",
 			"type": "string"
 		}
 	]
