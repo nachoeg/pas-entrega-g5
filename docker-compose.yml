@@ -3,14 +3,14 @@ services:
     image: rabbitmq:4-management
     container_name: rabbitmq
     ports:
-      - "5672:5672"   # AMQP (para los microservicios)
+      - "5672:5672" # AMQP (para los microservicios)
       - "15672:15672" # UI de administración
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
 
   cartmanager:
-    image: registry.gitlab.com/mauro4622412/microservice-grupo5/cart-manager:latest
+    image: ghcr.io/nachoeg/pas-cart-manager:latest
     container_name: cartmanager
     ports:
       - "8083:8083"
@@ -20,13 +20,13 @@ services:
       - SPRING_RABBITMQ_HOST=rabbitmq
 
   usermanager:
-    image: registry.gitlab.com/mauro4622412/microservice-grupo5/user-manager:latest
+    image: ghcr.io/nachoeg/pas-user-manager:latest
     container_name: usermanager
     ports:
       - "8081:8081"
 
   productmanager:
-    image: registry.gitlab.com/mauro4622412/microservice-grupo5/product-manager:latest
+    image: ghcr.io/nachoeg/pas-product-manager:latest
     container_name: productmanager
     ports:
       - "8082:8082"
@@ -36,7 +36,7 @@ services:
       - SPRING_RABBITMQ_HOST=rabbitmq
 
   walletmanager:
-    image: registry.gitlab.com/mauro4622412/microservice-grupo5/wallet-manager:latest
+    image: ghcr.io/nachoeg/pas-wallet-manager:latest
     container_name: walletmanager
     ports:
       - "8085:8085"
@@ -46,7 +46,7 @@ services:
       - SPRING_RABBITMQ_HOST=rabbitmq
 
   deliveryordermanager:
-    image: registry.gitlab.com/mauro4622412/microservice-grupo5/deliveryorder-manager:latest
+    image: ghcr.io/nachoeg/pas-deliveryorder-manager:latest
     container_name: deliveryordermanager
     ports:
       - "8084:8084"
@@ -54,4 +54,3 @@ services:
       - rabbitmq
     environment:
       - SPRING_RABBITMQ_HOST=rabbitmq
-
